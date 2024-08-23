@@ -23,6 +23,7 @@ struct ContentView: View {
                             catImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .frame(width: 150)
                         case .failure:
                             Image(systemName: "photo")
                                 .resizable()
@@ -35,6 +36,18 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     Text("Tags: \(cat.tags.joined(separator: ", "))")
                 }
+            }
+            
+            .onAppear {
+                if cat == viewModel.cats.last {
+                    Task {
+                        await viewModel.loadCats()
+                    }
+                }
+            }
+            
+            if viewModel.isLoading {
+                ProgressView("Loading more cats...")
             }
         }
         .navigationTitle("Cats")

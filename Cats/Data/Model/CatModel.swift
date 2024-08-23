@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CatModel: Codable, Identifiable {
+struct CatModel: Codable, Identifiable, Equatable {
     var id: String { _id }
     
     let _id: String

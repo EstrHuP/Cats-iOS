@@ -62,13 +62,12 @@
 		0BA0592B2C775F99002EC399 /* Cats */ = {
 			isa = PBXGroup;
 			children = (
+				0BA059502C78967A002EC399 /* Domain */,
 				0BA0593B2C776136002EC399 /* Data */,
 				0BA0592C2C775F99002EC399 /* CatsApp.swift */,
 				0BA059302C775F9B002EC399 /* Assets.xcassets */,
 				0BA059322C775F9B002EC399 /* Cats.entitlements */,
 				0BA059332C775F9B002EC399 /* Preview Content */,
-				0BA059472C776393002EC399 /* CatsViewModel.swift */,
-				0BA0592E2C775F99002EC399 /* CatsView.swift */,
 			);
 			path = Cats;
 			sourceTree = "<group>";
@@ -114,6 +113,31 @@
 				0BA059432C7761B1002EC399 /* AllCatsResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		0BA059502C78967A002EC399 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0BA059512C78967F002EC399 /* Modules */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0BA059512C78967F002EC399 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0BA059522C789683002EC399 /* CatList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0BA059522C789683002EC399 /* CatList */ = {
+			isa = PBXGroup;
+			children = (
+				0BA059472C776393002EC399 /* CatsViewModel.swift */,
+				0BA0592E2C775F99002EC399 /* CatsView.swift */,
+			);
+			path = CatList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -11,8 +11,8 @@ class ApiService {
     
     static let shared = ApiService()
     
-    func fetchAllCats() async throws -> [CatModel] {
-        guard let url = URL(string: "https://cataas.com/api/cats") else {
+    func getAllCatsInfinity(limit: Int) async throws -> [CatModel] {
+        guard let url = URL(string: "https://cataas.com/api/cats?limit=\(limit)&skip=0") else {
             throw URLError(.badURL)
         }
         
