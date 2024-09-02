@@ -13,6 +13,7 @@ class CatsViewModel: ObservableObject {
     @Published var cats: [CatModel] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
+    @Published var favoriteCats: Set<String> = []
     
     private var limitValue = 100
     private var hasMoreData = true
@@ -34,5 +35,19 @@ class CatsViewModel: ObservableObject {
         }
         
         isLoading = false
+    }
+    
+    func isFavorite(_ cat: CatModel) -> Bool {
+        favoriteCats.contains(cat._id)
+    }
+    
+    func addFavorite(_ cat: CatModel) {
+        favoriteCats.insert(cat._id)
+        print("Saving...", cat.id)
+    }
+    
+    func removeFavorite(_ cat: CatModel) {
+        favoriteCats.remove(cat._id)
+        print("Removing...", cat.id)
     }
 }
